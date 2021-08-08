@@ -8,9 +8,9 @@ public class CustomerFakeRepository implements CustomerRepo {
   @Override
   public List<Customer> getCustomers() {
     return Arrays.asList(
-        new Customer(1L, "Frank"),
-        new Customer(2L, "Henry"),
-        new Customer(3L, "Bean")
+        new Customer(1L, "Frank", "frank123"),
+        new Customer(2L, "Henry", "henry123"),
+        new Customer(3L, "Bean", "bean123")
     );
   }
 
