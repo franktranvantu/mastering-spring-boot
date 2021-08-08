@@ -2,12 +2,19 @@ package com.franktran.masteringspringboot.customer;
 
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class CustomerService {
 
-  public Customer getCustomer() {
-    Customer frank = new Customer(1L, "Frank");
-    return frank;
+  private final CustomerRepo customerRepo;
+
+  public CustomerService(CustomerRepo customerRepo) {
+    this.customerRepo = customerRepo;
+  }
+
+  public List<Customer> getCustomers() {
+    return customerRepo.getCustomers();
   }
 
 }
