@@ -25,6 +25,7 @@ public class Customer {
   }
 
   @JsonIgnore
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   public String getPassword() {
     return password;
   }
