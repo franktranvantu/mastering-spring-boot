@@ -1,11 +1,11 @@
 package com.franktran.masteringspringboot.customer;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Component("fake")
+@Repository("fake")
 public class CustomerFakeRepository implements CustomerRepo {
 
   @Override
