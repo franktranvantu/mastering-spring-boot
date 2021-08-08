@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v2")
+@RequestMapping("/api/v2/customers")
 public class CustomerControllerV2 {
 
   private final CustomerService customerService;
@@ -20,6 +20,11 @@ public class CustomerControllerV2 {
   @GetMapping
   public List<Customer> getCustomers() {
     return Collections.singletonList(new Customer(1L, "Frank", "frank123"));
+  }
+
+  @GetMapping("/{id}")
+  public Customer getCustomerById(@PathVariable Long id) {
+    return customerService.getCustomerById(id);
   }
 
   @PostMapping
