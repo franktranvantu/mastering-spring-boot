@@ -3,10 +3,14 @@ package com.franktran.masteringspringboot.customer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
+
 public class Customer {
 
   private final Long id;
+  @NotBlank
   private final String name;
+  @NotBlank
   private final String password;
 
   public Customer(Long id, String name, String password) {
