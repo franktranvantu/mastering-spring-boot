@@ -1,5 +1,6 @@
 package com.franktran.masteringspringboot.customer;
 
+import com.franktran.masteringspringboot.exception.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,11 @@ public class CustomerControllerV2 {
   @GetMapping("/{id}")
   public Customer getCustomerById(@PathVariable Long id) {
     return customerService.getCustomerById(id);
+  }
+
+  @GetMapping("/{id}/exception")
+  public Customer getCustomerByIdException(@PathVariable Long id) {
+    throw new ApiRequestException("Exception...");
   }
 
   @PostMapping
