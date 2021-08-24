@@ -3,6 +3,7 @@ package com.franktran.masteringspringboot.customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class CustomerControllerV2 {
   }
 
   @PostMapping
-  public void createCustomer(@RequestBody Customer customer) {
+  public void createCustomer(@RequestBody @Valid Customer customer) {
     System.out.println("POST REQUEST...");
     System.out.println(customer);
   }
