@@ -1,5 +1,6 @@
 package com.franktran.masteringspringboot;
 
+import com.franktran.masteringspringboot.infoapp.InfoApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -17,10 +18,12 @@ public class WebConfiguration {
     private Environment environment;
 
     @Bean
-    public CommandLineRunner commandLineRunner() {
+    public CommandLineRunner commandLineRunner(InfoApp infoApp) {
         return args -> {
             System.out.println(author);
             System.out.println(environment.getProperty("info.app.version"));
+
+            System.out.println(infoApp);
         };
     }
 }
