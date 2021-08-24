@@ -1,5 +1,6 @@
 package com.franktran.masteringspringboot.customer;
 
+import com.franktran.masteringspringboot.exception.NotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -23,6 +24,6 @@ public class CustomerService {
         .stream()
         .filter(customer -> customer.getId().equals(id))
         .findFirst()
-        .orElseThrow(() -> new IllegalStateException(String.format("Customer with id %s not found", id)));
+        .orElseThrow(() -> new NotFoundException(String.format("Customer with id %s not found", id)));
   }
 }
