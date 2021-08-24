@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.time.ZonedDateTime;
 
-public class ExceptionHandler {
+public class ApiExceptionHandler {
 
     public ResponseEntity<Object> handleApiRequestException(ApiRequestException ex) {
         ApiException apiException = new ApiException(ex.getMessage(), ex, HttpStatus.BAD_REQUEST, ZonedDateTime.now());
