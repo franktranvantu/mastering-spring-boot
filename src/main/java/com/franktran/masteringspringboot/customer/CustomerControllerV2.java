@@ -1,11 +1,9 @@
 package com.franktran.masteringspringboot.customer;
 
-import com.franktran.masteringspringboot.exception.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -21,17 +19,12 @@ public class CustomerControllerV2 {
 
   @GetMapping
   public List<Customer> getCustomers() {
-    return Collections.singletonList(new Customer(1L, "Frank", "frank123", "frank@gmail.com"));
+    return customerService.getCustomers();
   }
 
   @GetMapping("/{id}")
   public Customer getCustomerById(@PathVariable Long id) {
     return customerService.getCustomerById(id);
-  }
-
-  @GetMapping("/{id}/exception")
-  public Customer getCustomerByIdException(@PathVariable Long id) {
-    throw new ApiRequestException("Exception...");
   }
 
   @PostMapping
