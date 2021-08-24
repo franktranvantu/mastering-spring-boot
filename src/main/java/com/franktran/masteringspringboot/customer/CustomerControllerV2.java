@@ -20,7 +20,7 @@ public class CustomerControllerV2 {
 
   @GetMapping
   public List<Customer> getCustomers() {
-    return Collections.singletonList(new Customer(1L, "Frank", "frank123"));
+    return Collections.singletonList(new Customer(1L, "Frank", "frank123", "frank@gmail.com"));
   }
 
   @GetMapping("/{id}")

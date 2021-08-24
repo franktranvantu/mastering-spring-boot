@@ -3,6 +3,7 @@ package com.franktran.masteringspringboot.customer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 public class Customer {
@@ -12,11 +13,14 @@ public class Customer {
   private final String name;
   @NotBlank
   private final String password;
+  @Email
+  private final String email;
 
-  public Customer(Long id, String name, String password) {
+  public Customer(Long id, String name, String password, String email) {
     this.id = id;
     this.name = name;
     this.password = password;
+    this.email = email;
   }
 
   @JsonProperty("customerId")
@@ -34,13 +38,17 @@ public class Customer {
     return password;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
   @Override
   public String toString() {
     return "Customer{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        ", password='" + password + '\'' +
-        '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", password='" + password + '\'' +
+            ", email='" + email + '\'' +
+            '}';
   }
-
 }
