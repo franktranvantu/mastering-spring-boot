@@ -3,17 +3,20 @@ package com.franktran.masteringspringboot.customer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.*;
 
 public class Customer {
 
   private final Long id;
-  @NotBlank
+  @NotBlank(message = "Name must be not blank")
   private final String name;
-  @NotBlank
+  @NotBlank(message = "Password must be not blank")
   private final String password;
-  @Email
+  @Email(message = "Email is invalid")
+//  @Min()
+//  @Max()
+//  @Max.List()
+//  @Size
   private final String email;
 
   public Customer(Long id, String name, String password, String email) {
