@@ -13,10 +13,6 @@ public class Customer {
   @NotBlank(message = "Password must be not blank")
   private final String password;
   @Email(message = "Email is invalid")
-//  @Min()
-//  @Max()
-//  @Max.List()
-//  @Size
   private final String email;
 
   public Customer(Long id, String name, String password, String email) {
