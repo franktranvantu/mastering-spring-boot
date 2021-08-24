@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JSONPlaceHolderConfiguration {
 
-    @Bean
+    @Bean("jsonPlaceHolder")
     public CommandLineRunner commandLineRunner(JSONPlaceHolderClient jsonPlaceHolderClient) {
         return args -> {
             System.out.println(jsonPlaceHolderClient.getPosts().size());
